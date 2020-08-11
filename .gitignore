@@ -1,0 +1,4 @@
+*.csv
+*.pyc
+logs/
+setup/ENV_OK
