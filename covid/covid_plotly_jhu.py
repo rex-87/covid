@@ -104,10 +104,10 @@ try:
            
            # ---- unfiltered
             fig.add_trace(
-                go.Scatter(
+                go.Bar(
                     x = to_plot_df['date'],
                     y = to_plot_df[country_name],
-                    mode = 'markers',
+                    # mode = 'markers',
                     name = country_name,
                     visible = 'legendonly',
                 )

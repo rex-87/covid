@@ -74,7 +74,13 @@ try:
 			df_ = owid_df[owid_df['location'] == country_name]
 			# fig.add_trace(go.Scatter(x = df_['date'], y = df_[column_name]/, mode = 'markers', name = country_name))
 			# fig.add_trace(go.Scatter(x = df_['date'], y = round(df_[column_name].rolling(7, center =True).sum()/7), mode = 'lines', name = '{} (7d)'.format(country_name)))
-			fig.add_trace(go.Scatter(x = df_['date'], y = round(1e8*df_[column_name]/df_['population']), mode = 'markers', name = country_name, visible = 'legendonly',))
+			fig.add_trace(go.Bar(
+				x = df_['date'],
+				y = round(1e8*df_[column_name]/df_['population']),
+				# mode = 'markers',
+				name = country_name,
+				visible = 'legendonly',
+			))
 			fig.add_trace(go.Scatter(x = df_['date'], y = round(1e8*df_[column_name].rolling(7, center =True).sum()/7/df_['population']), mode = 'lines', name = '{} (7d)'.format(country_name)))
 			# fig.add_trace(go.Scatter(x = df_['date'], y = round(1e8*df_[column_name].rolling(7, center =True).median()/df_['population']), mode = 'lines', name = '{} (7d)'.format(country_name)))
 
