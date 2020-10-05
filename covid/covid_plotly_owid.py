@@ -62,8 +62,8 @@ try:
 		'new_cases',
 		'total_deaths',
 		'new_deaths',
-		'total_tests',
-		'new_tests',
+		# 'total_tests',
+		# 'new_tests',
 	]
 
 
@@ -72,7 +72,7 @@ try:
 		# ---- create figure
 		fig = go.Figure()	
 
-		country_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Turkey', 'Israel', 'United States', 'Brazil', 'India', 'Russia']
+		country_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Belgium', 'Sweden', 'Netherlands',]
 		for country_name in country_name_l:
 			
 			df_ = owid_df[owid_df['location'] == country_name]
@@ -114,38 +114,38 @@ try:
 	# --------------------------------------------------------
 	# ---- NUMBER OF DAILY CASES PER DAILY TESTS 
 	# --------------------------------------------------------
-	fig = go.Figure()	
+	# fig = go.Figure()	
 
-	country_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Turkey', 'Israel', 'United States', 'Brazil', 'India', 'Russia']
-	for country_name in country_name_l:
+	# country_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Turkey', 'Israel', 'United States', 'Brazil', 'India', 'Russia']
+	# for country_name in country_name_l:
 		
-		df_ = owid_df[owid_df['location'] == country_name]
+	# 	df_ = owid_df[owid_df['location'] == country_name]
 		
-		fig.add_trace(go.Scatter(x = df_['date'], y = df_['new_cases'].rolling(7, center =True).sum()/7/(df_['new_tests'].rolling(7, center =True).sum()/7), mode = 'lines', name = country_name))
+	# 	fig.add_trace(go.Scatter(x = df_['date'], y = df_['new_cases'].rolling(7, center =True).sum()/7/(df_['new_tests'].rolling(7, center =True).sum()/7), mode = 'lines', name = country_name))
 
-	# ---- update plot layout
-	fig.update_layout(
-		title = "Our World In Data: COVID-19 daily cases per daily tests (7d)",
-		xaxis=dict(
-			type="date"
-		),
-		legend = dict(
-			x=0.01,
-			y=0.99,
-		),
-		margin = dict(
-			l = 30,
-			r = 10,
-			b = 10,
-			t = 50,
-			pad = 4,
-		),
-	)
+	# # ---- update plot layout
+	# fig.update_layout(
+	# 	title = "Our World In Data: COVID-19 daily cases per daily tests (7d)",
+	# 	xaxis=dict(
+	# 		type="date"
+	# 	),
+	# 	legend = dict(
+	# 		x=0.01,
+	# 		y=0.99,
+	# 	),
+	# 	margin = dict(
+	# 		l = 30,
+	# 		r = 10,
+	# 		b = 10,
+	# 		t = 50,
+	# 		pad = 4,
+	# 	),
+	# )
 	
-	fig.update_yaxes(automargin=True)
+	# fig.update_yaxes(automargin=True)
 
 	# ---- show !
-	fig.show()
+	# fig.show()
 	
 	# fig.write_html("pfile.html", include_plotlyjs = 'cdn')
 	

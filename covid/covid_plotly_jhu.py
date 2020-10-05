@@ -79,8 +79,8 @@ try:
    
     
     # ---- parameters
-    coutry_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Turkey', 'Israel', 'US', 'Brazil', 'India', 'Russia']
-    # coutry_name_l = ['US', 'Brazil', 'India', 'Russia']
+    country_name_l = ['France', 'United Kingdom', 'Germany', 'Italy', 'Spain', 'Belgium', 'Sweden', 'Netherlands',]
+    # country_name_l = ['US', 'Brazil', 'India', 'Russia']
     
     l = [ 
         [cumul_confir_df, 'cumul confirmed'],
@@ -100,7 +100,7 @@ try:
         fig = go.Figure()
         
         # ---- prepare plots
-        for country_name in coutry_name_l:
+        for country_name in country_name_l:
            
            # ---- unfiltered
             fig.add_trace(
